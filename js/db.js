@@ -36,8 +36,6 @@ form.addEventListener('submit', evt => {
     // update button
     btnContainer.innerHTML = stopButtonHTML;
 
-    // close form
-
     db.collection('sessions').add(seshDetails)
         .catch(err => console.log(err));
 
