@@ -59,6 +59,12 @@ function dropMarker(data) {
         marker.setLabel(null);
         marker.setIcon(currentLocationIcon);
     }
+    var infowindow = new google.maps.InfoWindow({
+        content: `${data.subject} - ${data.instructions}`
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(studymap, marker);
+    });
     markers.uid = marker;
     console.log('dropped marker at', data.latitude, data.longitude, data.name);
 }

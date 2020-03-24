@@ -16,68 +16,18 @@
     <link rel="apple-touch-icon" href="/img/icon-256.png">
     <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
     <meta name="theme-color" content="#FFE1C4">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <!-- favicon stuff -->
     <link rel="shortcut icon" href="/favicon.ico">
+
 </head>
 
 <body class="grey lighten-4">
 
-    <!-- top nav -->
-    <nav class="z-depth-0">
-        <div class="nav-wrapper container">
-            <a href="/">Study<span>Mode</span></a>
-            <span class="right grey-text text-darken-1">
-                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-            </span>
-        </div>
-    </nav>
-
-    <!-- side nav -->
-    <ul id="side-menu" class="sidenav side-menu">
-        <li><a class="subheader">STUDYMODE</a></li>
-        <li><a href="/" class="waves-effect">Home</a></li>
-        <li><a href="/pages/about.html" class="waves-effect">About</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="/pages/contact.html" class="waves-effect">
-                <i class="material-icons">mail_outline</i>Contact</a>
-        </li>
-    </ul>
-
-    <!-- studymap -->
-    <div class="container" id="studymap"></div>
-
-    <!-- start/stop studying -->
-    <div class="center" id="startOrStopButtonContainer">
-        <a class="btn-floating btn-small btn-large startOrStop-btn sidenav-trigger" data-target="side-form">
-            <i class="material-icons"></i>
-        </a>
-    </div>
-
-    <!-- start studying side form -->
-    <div id="side-form" class="sidenav side-form">
-        <form class="add-session container section" id="add-sesh-form">
-            <h6>Study Session Details</h6>
-            <div class="divider"></div>
-            <div class="input-field">
-                <input id="subject" type="text" class="validate">
-                <label for="subject">Subject</label>
-            </div>
-            <div class="input-field">
-                <input id="instructions" type="text" class="validate">
-                <label for="instructions">Instructions</label>
-            </div>
-            <div class="input-field center sidenav-close">
-                <button class="btn-small" type="submit">Start Studying</button>
-            </div>
-        </form>
-    </div>
+    <h1>Log In</h1>
+    <div id="firebaseui-auth-container"></div>
 
     <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
     <script>
         var config = {
             apiKey: "AIzaSyAjD_4z3oC3J0LedswgDmTXILI2dWzDcQ4",
@@ -91,17 +41,10 @@
         }
         // Initialize Firebase
         firebase.initializeApp(config);
-        const db = firebase.firestore();
-        const auth = firebase.auth();
     </script>
-    <!-- jquery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="/js/app.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtCfWA1EuXPc4geNQTm2NsIb8xllcCac&callback=initMap"></script>
-    <script src="/js/db.js"></script>
-    <script src="/js/ui.js"></script>
-
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+    <script src="/js/auth.js"></script>
 </body>
 
 </html>
