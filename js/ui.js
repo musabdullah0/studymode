@@ -91,10 +91,28 @@ var stopButtonHTML = `
 
 // check if in session and set button and form dependent on that
 auth.onAuthStateChanged(user => {
+    const uid = auth.currentUser.uid;
+    // if user not in database, add to it
+    db.collection('users').doc(uid).get().then(doc => {
+        if (!doc.data()) {
+            db.collection('users').doc(uid).set({
+                email: auth.currentUser.email,
+                name: auth.currentUser.displayName,
+                inSession: false
+            });
+            console.log('added new user to database', auth.currentUser.email)
+        }
+    });
     if (user) {
-        const uid = auth.currentUser.uid;
-
+        // add user to database if not there
         db.collection('users').doc(uid).get().then(doc => {
+            if (!doc.data()) {
+                db.collection('users').doc(uid).set({
+                    email: auth.currentUser.email,
+                    name: auth.currentUser.displayName,
+                    inSession: false
+                })
+            }
             const studying = doc.data().inSession;
             btnContainer.innerHTML = studying ? stopButtonHTML : startButtonHTML;
             if (!studying) {

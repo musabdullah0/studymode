@@ -12,5 +12,9 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start('#firebaseui-auth-container', uiConfig);
 
 function logout() {
-    auth.signOut();
+    auth.signOut().then(() => {
+        console.log('signed out successfully');
+    }).catch(error => {
+        console.log(error);
+    })
 }
