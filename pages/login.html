@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Study Mode</title>
+    <!-- materialize icons css & js -->
+    <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" href="/css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <!-- manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/img/icon-256.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+    <meta name="theme-color" content="#FFE1C4">
+</head>
+
+<body class="grey lighten-4">
+
+    <h1>Log In</h1>
+    <div id="firebaseui-auth-container"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-auth.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAjD_4z3oC3J0LedswgDmTXILI2dWzDcQ4",
+            authDomain: "moose-sample-pwa.firebaseapp.com",
+            databaseURL: "https://moose-sample-pwa.firebaseio.com",
+            projectId: "moose-sample-pwa",
+            storageBucket: "moose-sample-pwa.appspot.com",
+            messagingSenderId: "960867862502",
+            appId: "1:960867862502:web:26d749e76cf7946b833827",
+            measurementId: "G-NSZWYWHJZD"
+        }
+        // Initialize Firebase
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+    <script src="/js/auth.js"></script>
+</body>
+
+</html>
