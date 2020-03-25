@@ -31,7 +31,8 @@ async function initCurrentLocationMarker() {
         draggable: true,
         icon: currentLocationIcon
     });
-    console.log('got current location', latlang);
+    studymap.setCenter(latlang);
+    console.log('centered at current location', latlang);
 }
 
 
@@ -52,7 +53,7 @@ function dropMarker(data) {
     var latlang = new google.maps.LatLng(data.latitude, data.longitude);
     var marker = new google.maps.Marker({
         position: latlang,
-        label: data.name,
+        label: { text: data.name, fontSize: "16px", fontWeight: "bold" },
         map: studymap,
     });
     if (auth.currentUser.uid == data.uid) {

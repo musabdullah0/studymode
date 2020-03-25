@@ -6,15 +6,15 @@
   }
   
   /* layout styles */
-  nav{
+  nav, .login-container{
     background: var(--primary);
     border-bottom: 10px solid var(--secondary);
   }
-  nav a{
+  nav a, .login-title{
     text-transform: uppercase;
     color: var(--title);
   }
-  nav a span{
+  nav a span, .login-title span{
     font-weight: bold;
   }
   nav .sidenav-trigger{
@@ -42,4 +42,8 @@
   }
   form .input-field{
     margin-top: 30px;
+  }
+
+  .login-container {
+    margin-top: 10px;
   }
